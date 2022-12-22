@@ -19,8 +19,12 @@ def RetornaSession():
 
 session = RetornaSession()
 
-x = Pessoa(nome = 'Marcos', usuario ='userMarcos', senha ='12')
-y = Pessoa(nome = 'Paulo', usuario ='userPaulo', senha ='00')
+x = session.query(Pessoa).all()
 
-session.add_all([x,y])
-session.commit()
+# x = session.query(Pessoa).filter(Pessoa.nome == 'marcos').filter(Pessoa.usuario == 'userMarcos')
+x = session.query(Pessoa).filter_by(nome='Marcos', usuario='userMarcos')
+
+for i in x:
+    print (i.id)
+
+print(x)
