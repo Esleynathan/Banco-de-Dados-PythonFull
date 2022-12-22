@@ -20,6 +20,6 @@ class Pessoa(Base):
     id = Column(Integer, primary_key=True)
     nome = Column(String(50))
     usuario = Column(String(20))
-    usuario = Column(String(10))
+    senha = Column(String(10))
 
 Base.metadata.create_all(engine)
