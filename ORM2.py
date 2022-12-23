@@ -1,5 +1,6 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy import or_
 from ORM import Pessoa
 
 
@@ -18,13 +19,17 @@ def RetornaSession():
     return Session()
 
 session = RetornaSession()
-
-x = session.query(Pessoa).all()
-
+## AULA SELECT ##
+# # x = session.query(Pessoa).all()
 # x = session.query(Pessoa).filter(Pessoa.nome == 'marcos').filter(Pessoa.usuario == 'userMarcos')
-x = session.query(Pessoa).filter_by(nome='Marcos', usuario='userMarcos')
+# x = session.query(Pessoa).filter_by(nome='Marcos', usuario='userMarcos')
+# for i in x:
+#     print (i.id)
+# print(x)
+## ## ## ## ## ##
 
-for i in x:
-    print (i.id)
-
-print(x)
+## AULA OPERADOR OR ##
+# x = session.query(Pessoa).filter(or_(Pessoa.nome == 'esley', Pessoa.usuario == 'userEsley')).all()
+# for i in x:
+#     print (i.id)    
+## ## ## ## ## ##
