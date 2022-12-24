@@ -19,6 +19,7 @@ def RetornaSession():
     return Session()
 
 session = RetornaSession()
+
 ## AULA SELECT ##
 # # x = session.query(Pessoa).all()
 # x = session.query(Pessoa).filter(Pessoa.nome == 'marcos').filter(Pessoa.usuario == 'userMarcos')
@@ -32,4 +33,13 @@ session = RetornaSession()
 # x = session.query(Pessoa).filter(or_(Pessoa.nome == 'esley', Pessoa.usuario == 'userEsley')).all()
 # for i in x:
 #     print (i.id)    
+## ## ## ## ## ##
+
+## AULA UPDATE ##
+# x = session.query(Pessoa).filter(Pessoa.id == '2').all()
+# x[0].nome = 'Adailza'
+# x[0].usuario = "userAdailza"
+# x[0].senha = '140369'
+# print(x[0].id)
+# session.commit()   
 ## ## ## ## ## ##
