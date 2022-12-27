@@ -41,5 +41,13 @@ session = RetornaSession()
 # x[0].usuario = "userAdailza"
 # x[0].senha = '140369'
 # print(x[0].id)
-# session.commit()   
+#   
+## ## ## ## ## ##
+
+## AULA DELETE ##
+#x = session.query(Pessoa).filter(Pessoa.id == '2').delete()
+x = session.query(Pessoa).filter(Pessoa.id == 3).one()
+print(x)
+# session.delete(x[0])
+session.commit() 
 ## ## ## ## ## ##
